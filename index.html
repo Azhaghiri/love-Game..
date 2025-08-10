@@ -194,6 +194,21 @@
     noBtn.style.top = `${newY + 50}px`;
   });
 
+  // Add margin-bottom to question option buttons
+  const style = document.createElement('style');
+  style.textContent = `
+    #questionDiv button {
+      margin-bottom: 10px;
+      background: #ff5eae;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+  `;
+
   setTimeout(() => alert("Don't Waste your Time, Gopika"), 5000);
   setTimeout(() => alert("Only One Option Here, Please Click 'Yes'"), 6000);
 
@@ -284,3 +299,4 @@
 
 </body>
 </html>
+
