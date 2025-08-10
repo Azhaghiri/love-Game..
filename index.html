@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Game ❤️</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: pink;
+    margin: 0;
+  }
+  .container {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 300px;
+  }
+  h2 {
+    color: #ff4d6d;
+  }
+  .btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+  }
+  button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: 0.2s;
+  }
+  #yesBtn {
+    background: #ff4d6d;
+    color: white;
+  }
+  #noBtn {
+    background: #ccc;
+    color: black;
+    position: relative;
+  }
+
+  /* Terms section */
+  .terms-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(255, 0, 102, 0.08);
+    padding: 32px 24px;
+    display: none;
+  }
+  .terms-container h1 {
+    color: #d72660;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .terms-container ol {
+    padding-left: 20px;
+    font-size: 1.08em;
+    color: #333;
+  }
+  .terms-container li {
+    margin-bottom: 18px;
+    line-height: 1.7;
+  }
+
+  /* Game styles */
+  #welcomeMessage, #startGame, #gameOver {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 32px 24px;
+    text-align: center;
+    display: none;
+  }
+  h1, h2, h3, h4 {
+    color: #ff5eae;
+    margin-bottom: 16px;
+  }
+  #gameOver button, #startGame button, .terms-container button {
+    background: #ff5eae;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 12px 0;
+    transition: background 0.2s;
+  }
+  #gameOver button:hover, #startGame button:hover, .terms-container button:hover {
+    background: #ff8ecf;
+  }
+  ul {
+    text-align: left;
+    margin: 16px auto;
+    padding-left: 24px;
+  }
+  #questionDiv {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 32px 24px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- Love Proposal Section -->
+<div class="container" id="proposalSection">
+  <h2>Are you like me? ❤️</h2>
+  <div style="margin-bottom: 15px;">
+    <input type="checkbox" id="terms">
+    <label for="terms" style="cursor:pointer; color: blue; text-decoration: underline;" onclick="showTerms()">Terms and Conditions</label>
+  </div>
+  <div class="btns">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+</div>
+
+<!-- Terms & Conditions Section -->
+<div class="terms-container" id="termsSection">
+  <h1>💖 Love Terms & Conditions</h1>
+  <ol style="text-align: justify;">
+  <li>Mutual Respect Clause – We agree to respect each other’s opinions, even when they’re wildly wrong about pizza toppings.<br>பரஸ்பர மரியாதை விதி – பீட்சாவில் அன்னாசி போடுவதைப்பற்றி உங்க அபிப்பிராயம் தவறானாலும் மரியாதையோட ஏற்கப்படும்.</li>
+            <li>Unlimited Support Guarantee – Emotional, mental, and snack support available 24/7.<br>முடிவில்லா ஆதரவு உத்தரவாதம் – மனம், உணர்ச்சி, ஸ்நாக்ஸ் எல்லாமே 24/7 கிடைக்கும்.</li>
+            <li>Hug & Cuddle Policy – Cuddles will be provided upon request, without unreasonable delays.<br>அன்பு & அணைப்பு கொள்கை – கேட்டவுடன் அணைப்புகள் உடனே வழங்கப்படும் (அதிக தாமதமின்றி).</li>
+            <li>No Ghosting Agreement – Disappearances longer than 24 hours require prior approval (except for naps).<br>காணாமல் போகாத ஒப்பந்தம் – 24 மணி நேரத்துக்கு மேல் காணாமல் போனால் முன் அனுமதி அவசியம் (தூக்கம் விதிவிலக்கு).</li>
+            <li>Joke Tolerance Rule – Bad jokes will be appreciated, even if they’re terrible.<br>ஜோக் பொறுத்துக் கொள்ளும் விதி – மோசமான ஜோக்ஸ் கூட புன்னகையோட ஏற்கப்படும்.</li>
+            <li>Fight Resolution Protocol – Arguments must be solved with either hugs, ice cream, or both.<br>சண்டை தீர்வு முறைகள் – சண்டைகள் ஹக், ஐஸ்கிரீம் அல்லது இரண்டையும் சேர்த்து தீர்க்கப்படும்.</li>
+            <li>Adventure Clause – Partner agrees to join on spontaneous trips, even if they’re just to the nearest street food vendor.<br>சாகச விதி – திடீர் ட்ரிப், ரோடு ட்ரிப், ஸ்ட்ரீட் ஃபுட் ட்ரிப் — எதற்கும் தயாராக இருக்க வேண்டும்.</li>
+            <li>Loyalty Policy – No cheating, unless it’s stealing fries from your plate.<br>நம்பிக்கை கொள்கை – துரோகம் இல்லை, ஆனால் உங்க பிளேட்டிலிருந்து ஃபிரைஸ் திருடுவது மட்டும் அனுமதி.</li>
+            <li>Good Morning & Good Night Message Rule – Mandatory unless time zones or dreamland interfere.<br>காலை வணக்கம் & இரவு வணக்கம் மெசேஜ் விதி – நேரம் கிடைக்கும் வரை அவசியம்.</li>
+            <li>Forever Validity – These terms never expire. Only love grows over time. ❤️<br>நிரந்தர செல்லுபடியாகும் – இந்த விதிமுறைகள் காலாவதியாகாது. காதல் மட்டும் அதிகரிக்கும் ❤️</li>
+  </ol>
+  <button onclick="hideTerms()">Close</button>
+</div>
+
+<!-- Game Section -->
+<div id="welcomeMessage">
+  <h1>Welcome Gopika!💖</h1>
+  <p>Are you ready to play?</p>
+  <button onclick="showRules()">Show Rules</button>
+</div>
+
+<div id="startGame">
+  <h2>Game is starting...</h2>
+  <h4>Rules:</h4>
+  <ul>
+    <li>Guess my favorite</li>
+    <li>Correct ha panala avolotha</li>
+    <li>Game Score Screenshot Vanum</li>
+  </ul>
+  <button onclick="startGame()">Start Game</button>
+</div>
+
+<div id="gameOver">
+  <h2>Game Over</h2>
+  <p>Your score: <span id="finalScore"></span></p>
+  <button onclick="restartGame()">Restart Game</button>
+  <button onclick="goToProposal()">Close Game</button>
+</div>
+
+<script>
+  // "No" Button moving effect
+  const noBtn = document.getElementById("noBtn");
+  const yesBtn = document.getElementById("yesBtn");
+
+  noBtn.addEventListener("mouseover", () => {
+    const container = document.querySelector(".container");
+    const containerRect = container.getBoundingClientRect();
+    const btnRect = noBtn.getBoundingClientRect();
+    let newX = Math.random() * (containerRect.width - btnRect.width - 50);
+    let newY = Math.random() * (containerRect.height - btnRect.height - 50);
+    noBtn.style.position = "absolute";
+    noBtn.style.left = `${newX}px`;
+    noBtn.style.top = `${newY + 50}px`;
+  });
+
+  setTimeout(() => alert("Don't Waste your Time, Gopika"), 5000);
+  setTimeout(() => alert("Only One Option Here, Please Click 'Yes'"), 6000);
+
+  yesBtn.addEventListener("click", () => {
+    const termsAccepted = document.getElementById("terms").checked;
+    if (!termsAccepted) {
+      alert("Please accept terms & conditions");
+      return;
+    }
+    document.getElementById("proposalSection").style.display = "none";
+    document.getElementById("welcomeMessage").style.display = "block";
+  });
+
+  function showTerms() {
+    document.getElementById("termsSection").style.display = "block";
+    document.getElementById("proposalSection").style.display = "none";
+  }
+  function hideTerms() {
+    document.getElementById("termsSection").style.display = "none";
+    document.getElementById("proposalSection").style.display = "block";
+  }
+
+  // Game logic
+  let questions = [
+    { question: "What is my favorite color?", answer: "orange", options: ["red", "green", "blue", "orange"] },
+    { question: "What is my favorite food?", answer: "mango rice", options: ["tomato rice", "maggi", "mango rice", "dosa"] },
+    { question: "What is my favorite animal?", answer: "cat", options: ["cat", "dog", "rabbit", "hamster"] },
+    { question: "What is my favorite hobby?", answer: "editing", options: ["reading", "sports", "music", "editing"] },
+    { question: "What is my favorite season?", answer: "winter", options: ["spring", "summer", "autumn", "winter"] },
+    { question: "What is my favorite actress?", answer: "You", options: ["Niyanthara", "sai Pallavi", "tamana", "You"] },
+    { question: "Do you Know My Weakness?", answer: "your Eye", options: ["your Eye", "fear", "lazyness", "game"] }
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+
+  function showRules() {
+    document.getElementById("startGame").style.display = "block";
+    document.getElementById("welcomeMessage").style.display = "none";
+  }
+
+  function startGame() {
+    document.getElementById("startGame").style.display = "none";
+    showQuestion();
+  }
+
+  function showQuestion() {
+    if (currentQuestion < questions.length) {
+      let q = questions[currentQuestion];
+      let questionDiv = document.createElement("div");
+      questionDiv.id = "questionDiv";
+      questionDiv.innerHTML = `
+        <h3>${q.question}</h3>
+        ${q.options.map(opt => `<button onclick="checkAnswer('${opt}')">${opt}</button>`).join("<br>")}
+      `;
+      document.body.appendChild(questionDiv);
+    } else {
+      endGame();
+    }
+  }
+
+  function checkAnswer(selected) {
+    if (selected === questions[currentQuestion].answer) {
+      score++;
+    }
+    document.getElementById("questionDiv").remove();
+    currentQuestion++;
+    showQuestion();
+  }
+
+  function endGame() {
+    document.getElementById("gameOver").style.display = "block";
+    document.getElementById("finalScore").textContent = score + " / " + questions.length;
+  }
+
+  function restartGame() {
+    document.getElementById("gameOver").style.display = "none";
+    currentQuestion = 0;
+    score = 0;
+    showRules();
+  }
+
+  function goToProposal() {
+    document.getElementById("gameOver").style.display = "none";
+    document.getElementById("proposalSection").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
